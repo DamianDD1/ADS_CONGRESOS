@@ -1,0 +1,695 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Vista previa — Riviera Maya Congresos 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Hanken+Grotesk:wght@400;500;600;700&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html, body, #root { height: 100%; }
+body {
+  font-family: 'Hanken Grotesk', sans-serif;
+  font-size: 15px; color: var(--text); background: var(--bg);
+  -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+}
+
+:root {
+  /* ===== Paleta IBTM Americas (púrpura → magenta → carmesí) =====
+     Conservamos los nombres --navy/--teal del sistema anterior para no
+     reescribir todo el dashboard: ahora apuntan a la nueva identidad. */
+  --navy: #2c0e38;          /* púrpura profundo (superficies oscuras, sidebar) */
+  --navy-mid: #491a5a;
+  --navy-light: #6e2682;
+
+  --teal: #ec1d52;          /* acento principal: carmesí IBTM (CTA) */
+  --teal-dark: #c8123f;
+  --teal-light: #fde6ee;    /* tinte rosado suave (fondos de icono) */
+  --teal-soft: #f6c8d8;
+  --accent: var(--teal);
+
+  /* Tokens de marca para el landing */
+  --purple-900: #260c31;
+  --purple-800: #350f43;
+  --purple-700: #5a1a6b;
+  --purple-600: #6e2682;
+  --magenta: #a3216f;
+  --pink: #d81e63;
+  --crimson: #ec1d52;
+  --crimson-700: #c4123e;
+  --blue: #0e8bd1;
+  --blue-600: #1763c0;
+  --orange: #e8730e;
+  --ink: #160a1c;
+  --hero-grad: linear-gradient(135deg, #350f43 0%, #6e2682 28%, #a3216f 52%, #d81e63 78%, #ec1d52 100%);
+
+  --bg: #f4eef3;
+  --surface: #ffffff;
+  --surface-2: #faf5f9;
+  --line: #ecdfe9;
+  --line-strong: #d8c4d4;
+
+  --text: #2a142f;
+  --text-mid: #5b4960;
+  --text-light: #998a9e;
+
+  --danger: #d23a3a;
+  --success: #128a5e;
+  --warning: #b97d12;
+
+  --radius: 16px;
+  --radius-sm: 10px;
+  --shadow-sm: 0 1px 2px rgba(44,14,56,.06), 0 2px 10px rgba(44,14,56,.06);
+  --shadow: 0 8px 28px rgba(44,14,56,.12);
+  --shadow-lg: 0 22px 60px rgba(44,14,56,.22);
+
+  --display: 'Archivo', sans-serif;
+  --body: 'Hanken Grotesk', sans-serif;
+}
+
+/* ICONOS */
+.icon { display:inline-block; vertical-align:-.18em; flex-shrink:0; }
+
+/* TIPOGRAFÍA / HELPERS DE TÍTULO */
+.eyebrow { font-family:var(--display); font-size:.7rem; font-weight:700; letter-spacing:.22em; text-transform:uppercase; color:var(--teal); }
+
+/* SPLASH */
+.splash { display:flex; align-items:center; justify-content:center; height:100vh; background:var(--navy); color:#fff; }
+.splash-logo { display:flex; animation:pulse 1.8s ease-in-out infinite; color:var(--teal); }
+@keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.55;transform:scale(.93)} }
+
+/* ════════════ AUTH ════════════ */
+.auth-layout { min-height:100vh; display:grid; grid-template-columns:1.05fr 1fr; overflow:hidden; }
+@media(max-width:860px){ .auth-layout { grid-template-columns:1fr; } }
+
+.auth-panel-left {
+  background:var(--navy); color:#fff;
+  display:flex; flex-direction:column; justify-content:center;
+  padding:4.5rem 4rem; position:relative; overflow:hidden;
+}
+.riviera-scene { position:absolute; inset:0; width:100%; height:100%; z-index:0; }
+.auth-panel-left::before {
+  content:''; position:absolute; inset:0; z-index:1;
+  background:linear-gradient(140deg, rgba(38,12,49,.55) 0%, rgba(110,38,130,.18) 45%, rgba(38,12,49,.82) 100%);
+}
+.auth-left-content { position:relative; z-index:2; max-width:420px; }
+.auth-brand-icon { display:inline-flex; color:var(--teal); margin-bottom:1.75rem; }
+.auth-brand-eyebrow { font-family:var(--display); font-size:.72rem; font-weight:700; letter-spacing:.26em; text-transform:uppercase; color:var(--teal); display:block; margin-bottom:1rem; }
+.auth-brand-title { font-family:var(--display); font-size:2.9rem; font-weight:800; line-height:1.04; letter-spacing:-.01em; text-transform:uppercase; color:#fff; margin-bottom:1.1rem; }
+.auth-brand-title span { color:var(--teal); }
+.auth-brand-desc { font-size:.96rem; color:rgba(255,255,255,.62); line-height:1.7; max-width:360px; }
+.auth-stats { display:flex; gap:1rem; margin-top:2.75rem; }
+.auth-stat { background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.12); border-radius:var(--radius); padding:.9rem 1.35rem; backdrop-filter:blur(6px); }
+.auth-stat-num { font-family:var(--display); font-size:1.7rem; font-weight:800; color:var(--teal); display:block; line-height:1; }
+.auth-stat-lbl { font-size:.72rem; color:rgba(255,255,255,.5); margin-top:.35rem; display:block; }
+
+.auth-panel-right { background:var(--surface); display:flex; align-items:center; justify-content:center; padding:3rem 2rem; position:relative; }
+.auth-panel-right::after { content:''; position:absolute; top:2rem; right:2rem; width:90px; height:90px; background-image:radial-gradient(var(--line-strong) 1.4px, transparent 1.4px); background-size:13px 13px; opacity:.7; }
+.auth-form-wrap { width:100%; max-width:420px; position:relative; z-index:1; }
+.auth-form-title { font-family:var(--display); font-size:2rem; font-weight:800; color:var(--navy); margin-bottom:.4rem; letter-spacing:-.01em; }
+.auth-form-sub { font-size:.9rem; color:var(--text-light); margin-bottom:2rem; }
+.auth-link { text-align:center; margin-top:1.5rem; font-size:.88rem; color:var(--text-light); }
+.auth-link a { color:var(--teal); font-weight:600; text-decoration:none; }
+.auth-link a:hover { text-decoration:underline; }
+@media(max-width:860px){ .auth-panel-left { display:none; } }
+
+/* ════════════ FORM FIELDS ════════════ */
+.field { margin-bottom:1.1rem; }
+.field label { display:block; font-family:var(--display); font-size:.7rem; font-weight:600; text-transform:uppercase; letter-spacing:.1em; color:var(--text-mid); margin-bottom:.45rem; }
+.field input, .field select, .field textarea {
+  width:100%; padding:.72rem 1rem;
+  border:1.5px solid var(--line); border-radius:var(--radius-sm);
+  font-family:var(--body); font-size:.92rem; color:var(--text);
+  background:var(--surface); outline:none;
+  transition:border-color .15s, box-shadow .15s;
+}
+.field input::placeholder, .field textarea::placeholder { color:#aeb6c4; }
+.field input:focus, .field select:focus, .field textarea:focus {
+  border-color:var(--teal);
+  box-shadow:0 0 0 3px rgba(20,154,146,.14);
+}
+.field textarea { resize:vertical; min-height:84px; }
+.field-row { display:grid; grid-template-columns:1fr 1fr; gap:.875rem; }
+.hint { font-size:.74rem; color:var(--text-light); margin-top:.35rem; }
+@media(max-width:600px){ .field-row { grid-template-columns:1fr; } }
+
+/* ════════════ BUTTONS ════════════ */
+.btn { display:inline-flex; align-items:center; justify-content:center; gap:8px; padding:.7rem 1.5rem; border:none; border-radius:var(--radius-sm); font-family:var(--display); font-size:.82rem; font-weight:600; letter-spacing:.02em; cursor:pointer; transition:all .16s; text-decoration:none; }
+.btn:active { transform:translateY(1px); }
+.btn:disabled { opacity:.5; cursor:not-allowed; }
+.btn .icon { margin:-2px 0; }
+
+.btn-primary { background:var(--navy); color:#fff; }
+.btn-primary:hover:not(:disabled) { background:var(--navy-mid); box-shadow:0 6px 18px rgba(11,34,64,.25); }
+
+/* CTA principal (antes "gold") ahora es teal, como en la referencia */
+.btn-gold { background:var(--teal); color:#fff; box-shadow:0 4px 14px rgba(20,154,146,.28); }
+.btn-gold:hover:not(:disabled) { background:var(--teal-dark); box-shadow:0 6px 20px rgba(20,154,146,.36); }
+
+.btn-ghost { background:transparent; color:var(--text-mid); border:1.5px solid var(--line-strong); }
+.btn-ghost:hover:not(:disabled) { border-color:var(--navy); color:var(--navy); }
+.btn-danger { background:#fdeded; color:var(--danger); border:1px solid #f5cccc; }
+.btn-danger:hover:not(:disabled) { background:var(--danger); color:#fff; border-color:var(--danger); }
+.btn-success { background:#e7f6ef; color:var(--success); border:1px solid #c2e7d5; }
+.btn-success:hover:not(:disabled) { background:var(--success); color:#fff; border-color:var(--success); }
+.btn-sm { padding:.42rem .9rem; font-size:.76rem; }
+.btn-full { width:100%; }
+.btn-icon { display:inline-flex; align-items:center; justify-content:center; padding:.4rem; background:transparent; border:none; cursor:pointer; color:var(--text-light); border-radius:7px; transition:all .15s; }
+.btn-icon:hover { color:var(--danger); background:#fdeded; }
+.btn-pdf { background:var(--surface); border:1.5px solid var(--line-strong); color:var(--navy); }
+.btn-pdf:hover { border-color:var(--teal); color:var(--teal); background:var(--teal-light); }
+
+/* ════════════ ALERTS ════════════ */
+.alert { display:flex; align-items:center; gap:9px; padding:.8rem 1rem; border-radius:var(--radius-sm); font-size:.88rem; margin-bottom:1rem; }
+.alert-error { background:#fdeded; color:#9a2828; border:1px solid #f5cccc; }
+.alert-success { background:#e7f6ef; color:#0d6b48; border:1px solid #c2e7d5; }
+
+/* ════════════ DASHBOARD ════════════ */
+.dashboard { display:flex; height:100vh; overflow:hidden; }
+
+/* SIDEBAR */
+.sidebar { width:256px; flex-shrink:0; background:var(--navy); display:flex; flex-direction:column; overflow-y:auto; position:relative; }
+.sidebar::before { content:''; position:absolute; bottom:0; left:0; right:0; height:200px; background-image:repeating-linear-gradient(135deg, rgba(255,255,255,.025) 0 2px, transparent 2px 10px); pointer-events:none; }
+.sidebar-top { padding:1.6rem 1.35rem 1.35rem; border-bottom:1px solid rgba(255,255,255,.08); }
+.sidebar-brand { display:flex; align-items:center; gap:11px; }
+.sidebar-palm { display:inline-flex; color:var(--teal); }
+.sidebar-name { font-family:var(--display); font-size:1.02rem; font-weight:800; color:#fff; display:block; line-height:1.05; letter-spacing:.01em; }
+.sidebar-sub { font-family:var(--display); font-size:.6rem; color:var(--teal); letter-spacing:.2em; text-transform:uppercase; font-weight:600; }
+.sidebar-nav { flex:1; padding:1rem .8rem; display:flex; flex-direction:column; gap:3px; position:relative; z-index:1; }
+.sidebar-section { font-family:var(--display); font-size:.62rem; font-weight:700; letter-spacing:.18em; text-transform:uppercase; color:rgba(255,255,255,.32); padding:.6rem .85rem .4rem; }
+.sidebar-item { display:flex; align-items:center; gap:11px; padding:.65rem .9rem; border-radius:9px; background:transparent; border:none; color:rgba(255,255,255,.62); font-size:.88rem; font-family:var(--body); font-weight:500; cursor:pointer; text-align:left; width:100%; transition:all .15s; position:relative; }
+.sidebar-item:hover { background:rgba(255,255,255,.07); color:#fff; }
+.sidebar-item.active { background:rgba(20,154,146,.16); color:#fff; }
+.sidebar-item.active::before { content:''; position:absolute; left:0; top:50%; transform:translateY(-50%); width:3px; height:60%; background:var(--teal); border-radius:0 3px 3px 0; }
+.sidebar-item-icon { display:inline-flex; color:inherit; opacity:.9; }
+.sidebar-bottom { padding:.9rem .8rem 1.1rem; border-top:1px solid rgba(255,255,255,.08); position:relative; z-index:1; }
+.sidebar-user { display:flex; align-items:center; gap:11px; padding:.55rem .7rem; border-radius:9px; margin-bottom:.4rem; }
+.sidebar-avatar { width:38px; height:38px; border-radius:10px; background:linear-gradient(135deg,var(--teal),var(--teal-dark)); color:#fff; display:flex; align-items:center; justify-content:center; font-family:var(--display); font-weight:700; font-size:.85rem; flex-shrink:0; }
+.sidebar-uname { font-size:.84rem; font-weight:600; color:#fff; display:block; line-height:1.25; }
+.sidebar-urole { font-size:.7rem; color:rgba(255,255,255,.4); text-transform:capitalize; }
+.sidebar-logout { display:flex; align-items:center; gap:9px; width:100%; padding:.6rem .9rem; border-radius:9px; background:transparent; border:none; color:rgba(255,255,255,.45); font-size:.82rem; font-family:var(--body); font-weight:500; cursor:pointer; transition:all .15s; }
+.sidebar-logout:hover { background:rgba(210,58,58,.14); color:#f4b4b4; }
+
+/* MAIN */
+.main { flex:1; overflow-y:auto; display:flex; flex-direction:column; }
+.topbar { display:flex; align-items:center; justify-content:space-between; padding:1.15rem 2.25rem; background:var(--surface); border-bottom:1px solid var(--line); position:sticky; top:0; z-index:10; }
+.topbar-title { font-family:var(--display); font-size:1.4rem; font-weight:800; color:var(--navy); letter-spacing:-.01em; }
+.topbar-sub { font-size:.76rem; color:var(--text-light); margin-top:1px; }
+.topbar-right { display:flex; align-items:center; gap:10px; }
+.role-pill { font-family:var(--display); padding:5px 13px; border-radius:7px; font-size:.66rem; font-weight:700; text-transform:uppercase; letter-spacing:.08em; }
+.role-coordinador { background:var(--navy); color:#fff; }
+.role-autor { background:#e7edf8; color:#1d4ed8; }
+.role-proveedor { background:var(--teal-light); color:var(--teal-dark); }
+.role-cliente { background:#ebe8fb; color:#5b3bc4; }
+
+.content { padding:2rem 2.25rem 2.5rem; flex:1; max-width:1400px; width:100%; }
+.content-hdr { display:flex; align-items:flex-end; justify-content:space-between; flex-wrap:wrap; gap:1rem; margin-bottom:1.75rem; padding-bottom:1.1rem; border-bottom:1px solid var(--line); }
+.content-hdr-title { font-family:var(--display); font-size:1.35rem; font-weight:800; color:var(--navy); letter-spacing:-.01em; }
+.content-hdr-sub { font-size:.82rem; color:var(--text-light); margin-top:3px; }
+
+/* STATS */
+.stats-row { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:1rem; margin-bottom:2rem; }
+.stat-card { background:var(--surface); border-radius:var(--radius); padding:1.2rem 1.35rem; border:1px solid var(--line); box-shadow:var(--shadow-sm); display:flex; align-items:center; gap:14px; position:relative; overflow:hidden; transition:box-shadow .2s, transform .2s; }
+.stat-card:hover { box-shadow:var(--shadow); transform:translateY(-2px); }
+.stat-card::after { content:''; position:absolute; right:-18px; bottom:-18px; width:70px; height:70px; border-radius:50%; background:var(--surface-2); }
+.stat-icon { width:46px; height:46px; border-radius:12px; display:flex; align-items:center; justify-content:center; flex-shrink:0; position:relative; z-index:1; }
+.si-gold { background:var(--navy); color:#fff; }
+.si-teal { background:var(--teal-light); color:var(--teal-dark); }
+.si-purple { background:#ebe8fb; color:#5b3bc4; }
+.si-blue { background:#e7edf8; color:#1d4ed8; }
+.stat-num { font-family:var(--display); font-size:1.9rem; font-weight:800; color:var(--navy); line-height:1; position:relative; z-index:1; }
+.stat-lbl { font-size:.76rem; color:var(--text-light); margin-top:4px; position:relative; z-index:1; }
+
+/* CARDS */
+.cards-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:1.25rem; }
+.card { background:var(--surface); border-radius:var(--radius); border:1px solid var(--line); overflow:hidden; box-shadow:var(--shadow-sm); display:flex; flex-direction:column; transition:box-shadow .2s, transform .2s, border-color .2s; position:relative; }
+.card:hover { box-shadow:var(--shadow); transform:translateY(-3px); border-color:var(--line-strong); }
+.card-header { padding:1.05rem 1.1rem .75rem; display:flex; align-items:flex-start; justify-content:space-between; gap:8px; }
+.card-status { font-family:var(--display); padding:4px 11px; border-radius:6px; font-size:.66rem; font-weight:700; text-transform:uppercase; letter-spacing:.06em; }
+.s-activo { background:#e7f6ef; color:#0d6b48; }
+.s-planeacion { background:#fdf2e0; color:#9a6410; }
+.s-cerrado { background:#eef1f6; color:#697585; }
+.card-body { padding:0 1.1rem 1rem; flex:1; }
+.card-title { font-family:var(--display); font-size:1.12rem; font-weight:700; color:var(--navy); margin-bottom:.5rem; line-height:1.25; }
+.card-topic { display:inline-flex; align-items:center; gap:6px; font-size:.78rem; color:var(--teal-dark); font-weight:600; margin-bottom:.7rem; }
+.card-detail { display:flex; align-items:center; gap:8px; font-size:.82rem; color:var(--text-mid); margin-bottom:.4rem; }
+.card-detail .icon { color:var(--text-light); }
+.card-detail a { color:var(--teal-dark); }
+.card-desc { font-size:.82rem; color:var(--text-light); margin-top:.6rem; line-height:1.6; }
+.card-footer { padding:.8rem 1.1rem; border-top:1px solid var(--line); background:var(--surface-2); display:flex; align-items:center; justify-content:space-between; }
+.card-coord { font-size:.76rem; color:var(--text-light); }
+.card-coord strong { color:var(--text-mid); font-weight:600; }
+
+/* FORM CARD */
+.form-card { background:var(--surface); border-radius:var(--radius); border:1px solid var(--line); box-shadow:var(--shadow-sm); padding:1.9rem; margin-bottom:1.75rem; }
+.form-card-title { font-family:var(--display); font-size:1.2rem; font-weight:800; color:var(--navy); margin-bottom:.35rem; }
+.form-card-sub { font-size:.83rem; color:var(--text-light); margin-bottom:1.6rem; }
+.form-actions { display:flex; gap:.75rem; margin-top:1.4rem; }
+
+/* TABLE */
+.table-wrap { background:var(--surface); border-radius:var(--radius); border:1px solid var(--line); overflow:hidden; box-shadow:var(--shadow-sm); }
+.table-head { padding:1rem 1.5rem; border-bottom:1px solid var(--line); display:flex; align-items:center; justify-content:space-between; }
+.table-head-title { font-family:var(--display); font-size:1rem; font-weight:700; color:var(--navy); }
+table { width:100%; border-collapse:collapse; font-size:.88rem; }
+thead th { font-family:var(--display); padding:.75rem 1.25rem; text-align:left; font-size:.66rem; font-weight:700; text-transform:uppercase; letter-spacing:.1em; color:var(--text-light); background:var(--surface-2); border-bottom:1px solid var(--line); }
+tbody td { padding:.9rem 1.25rem; border-bottom:1px solid var(--line); vertical-align:middle; color:var(--text-mid); }
+tbody td strong { color:var(--navy); }
+tbody tr:last-child td { border-bottom:none; }
+tbody tr:hover td { background:var(--surface-2); }
+.badge { font-family:var(--display); padding:3px 11px; border-radius:6px; font-size:.66rem; font-weight:700; text-transform:uppercase; letter-spacing:.05em; }
+.badge-pendiente { background:#fdf2e0; color:#9a6410; }
+.badge-aprobada { background:#e7f6ef; color:#0d6b48; }
+.badge-rechazada { background:#fdeded; color:#9a2828; }
+.badge-confirmada { background:#e7f6ef; color:#0d6b48; }
+.badge-cancelada { background:#eef1f6; color:#697585; }
+
+/* EMPTY */
+.empty { text-align:center; padding:4rem 2rem; color:var(--text-light); }
+.empty span { display:inline-flex; align-items:center; justify-content:center; width:64px; height:64px; border-radius:16px; background:var(--surface-2); border:1px solid var(--line); color:var(--text-light); margin:0 auto .9rem; }
+.empty p { font-size:.92rem; }
+
+/* MISC */
+code { font-family:'SFMono-Regular',Consolas,monospace; background:var(--surface-2); border:1px solid var(--line); padding:2px 8px; border-radius:6px; font-size:.8rem; color:var(--navy); }
+a { color:var(--teal-dark); }
+
+@media(max-width:768px){
+  .sidebar { display:none; }
+  .content { padding:1.1rem; }
+  .topbar { padding:1rem 1.1rem; }
+  .stats-row { grid-template-columns:1fr 1fr; }
+}
+
+/* ════════════ WIZARD DE CONGRESO ════════════ */
+.cong-wizard { padding-top:1.25rem; }
+.field-lbl { display:block; font-family:var(--display); font-size:.7rem; font-weight:600; text-transform:uppercase; letter-spacing:.1em; color:var(--text-mid); margin-bottom:.55rem; }
+.field-row-3 { display:grid; grid-template-columns:1fr 1fr 1fr; gap:.875rem; }
+@media(max-width:600px){ .field-row-3 { grid-template-columns:1fr; } }
+.input-prefix { position:relative; }
+.input-prefix span { position:absolute; left:.95rem; top:50%; transform:translateY(-50%); color:var(--text-light); font-size:.9rem; pointer-events:none; }
+.input-prefix input { padding-left:1.8rem; }
+
+/* STEPPER */
+.stepper { display:flex; align-items:center; gap:.5rem; padding:.5rem 0 1.5rem; margin-bottom:1.5rem; border-bottom:1px solid var(--line); }
+.wstep { flex:1; display:flex; align-items:center; gap:11px; opacity:.5; transition:opacity .25s; }
+.wstep.active, .wstep.done { opacity:1; }
+.wstep-dot { width:32px; height:32px; border-radius:9px; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-family:var(--display); font-size:.82rem; font-weight:700; background:var(--surface-2); border:1.5px solid var(--line); color:var(--text-light); transition:all .25s; }
+.wstep.active .wstep-dot { background:var(--navy); border-color:var(--navy); color:#fff; }
+.wstep.done .wstep-dot { background:var(--teal); border-color:var(--teal); color:#fff; }
+.wstep-txt small { display:block; font-family:var(--display); font-size:.6rem; letter-spacing:.12em; text-transform:uppercase; color:var(--text-light); }
+.wstep-txt b { font-family:var(--display); font-size:.84rem; font-weight:700; color:var(--navy); }
+@media(max-width:680px){ .wstep-txt { display:none; } }
+.wpage { animation:rise .3s ease; }
+@keyframes rise { from{opacity:0; transform:translateY(8px);} to{opacity:1; transform:none;} }
+
+/* DROPZONE */
+.dropzone { display:flex; flex-direction:column; align-items:center; border:2px dashed var(--line-strong); border-radius:var(--radius-sm); padding:1.9rem; text-align:center; cursor:pointer; transition:all .18s; background:var(--surface-2); }
+.dropzone:hover, .dropzone.drag { border-color:var(--teal); background:var(--teal-light); }
+.dropzone .dz-icon { display:inline-flex; color:var(--text-light); margin-bottom:.55rem; }
+.dropzone:hover .dz-icon, .dropzone.drag .dz-icon { color:var(--teal); }
+.dropzone b { color:var(--navy); font-size:.88rem; }
+.dropzone small { display:block; color:var(--text-light); font-size:.76rem; margin-top:.25rem; }
+.dz-preview { margin-top:.85rem; display:flex; align-items:center; gap:9px; background:var(--surface-2); border:1px solid var(--line); border-radius:var(--radius-sm); padding:.6rem .8rem; font-size:.82rem; color:var(--text-mid); }
+.dz-preview .icon { color:var(--text-light); }
+.dz-preview .x { margin-left:auto; cursor:pointer; color:var(--text-light); display:inline-flex; }
+.dz-preview .x:hover { color:var(--danger); }
+
+/* SALONES */
+.salon-grid { display:grid; grid-template-columns:1fr 1fr; gap:.85rem; }
+@media(max-width:600px){ .salon-grid { grid-template-columns:1fr; } }
+.salon { border:1.5px solid var(--line); border-radius:var(--radius-sm); padding:.95rem 1rem .95rem 2.5rem; cursor:pointer; transition:all .18s; background:var(--surface); position:relative; }
+.salon:hover { border-color:var(--teal-soft); }
+.salon.sel { border-color:var(--teal); background:var(--teal-light); box-shadow:0 0 0 3px rgba(20,154,146,.1); }
+.salon-name { font-family:var(--display); font-size:1.02rem; font-weight:700; color:var(--navy); }
+.salon-meta { display:flex; gap:1.1rem; margin-top:.4rem; font-size:.76rem; color:var(--text-mid); }
+.salon-meta span { display:inline-flex; align-items:center; gap:5px; }
+.salon-cost { font-weight:600; color:var(--teal-dark); }
+.salon-stock { position:absolute; top:.7rem; right:.85rem; font-family:var(--display); font-size:.6rem; font-weight:600; text-transform:uppercase; letter-spacing:.06em; color:var(--text-light); }
+.qty { display:flex; align-items:center; gap:.55rem; margin-top:.65rem; }
+.qty button { width:28px; height:28px; border-radius:7px; border:1.5px solid var(--line); background:var(--surface); cursor:pointer; font-size:1rem; line-height:1; color:var(--navy); }
+.qty button:hover { border-color:var(--teal); color:var(--teal); background:var(--teal-light); }
+.qty span { min-width:1.5rem; text-align:center; font-weight:700; color:var(--navy); }
+.salon-check { position:absolute; top:1rem; left:.9rem; width:18px; height:18px; accent-color:var(--teal); cursor:pointer; }
+
+/* CONDICIONALES + CHIPS */
+.cond { border:1px solid var(--line); border-radius:var(--radius-sm); padding:1.05rem 1.15rem; margin-top:1rem; background:var(--surface-2); }
+.cond-title { display:flex; align-items:center; gap:8px; font-family:var(--display); font-size:.72rem; font-weight:700; text-transform:uppercase; letter-spacing:.08em; color:var(--navy); margin-bottom:.7rem; }
+.cond-title .icon { color:var(--teal); }
+.chips { display:flex; flex-wrap:wrap; gap:.45rem; }
+.chip { display:inline-flex; align-items:center; gap:6px; font-size:.76rem; background:var(--surface); border:1px solid var(--line); border-radius:7px; padding:.35rem .75rem; color:var(--text-mid); }
+.chip .icon { color:var(--text-light); }
+
+/* CHECK CARDS */
+.check { display:flex; align-items:center; gap:11px; padding:.75rem .9rem; border:1.5px solid var(--line); border-radius:var(--radius-sm); cursor:pointer; transition:all .15s; background:var(--surface); margin-bottom:.5rem; }
+.check:hover { border-color:var(--teal-soft); }
+.check.on { border-color:var(--teal); background:var(--teal-light); }
+.check input { width:18px; height:18px; accent-color:var(--teal); cursor:pointer; flex-shrink:0; }
+.check-txt b { font-size:.86rem; color:var(--navy); font-weight:600; display:block; }
+.check-txt small { font-size:.74rem; color:var(--text-light); }
+
+/* PROVEEDORES PILLS */
+.prov-wrap { display:flex; flex-wrap:wrap; gap:.5rem; }
+.prov { display:inline-flex; align-items:center; gap:7px; font-size:.8rem; padding:.45rem .9rem; border:1.5px solid var(--line); border-radius:8px; cursor:pointer; transition:all .15s; background:var(--surface); color:var(--text-mid); }
+.prov::before { content:''; width:8px; height:8px; border-radius:50%; background:var(--line-strong); }
+.prov:hover { border-color:var(--teal-soft); }
+.prov.on { border-color:var(--teal); background:var(--teal-light); color:var(--teal-dark); font-weight:600; }
+.prov.on::before { background:var(--teal); }
+.prov small { color:var(--text-light); }
+.prov.on small { color:var(--teal-dark); }
+
+/* MÉTODO DE PAGO */
+.pay-grid { display:grid; grid-template-columns:1fr 1fr 1fr; gap:.65rem; margin-bottom:1rem; }
+@media(max-width:600px){ .pay-grid { grid-template-columns:1fr; } }
+.pay { display:flex; flex-direction:column; align-items:center; gap:.4rem; border:1.5px solid var(--line); border-radius:var(--radius-sm); padding:1rem .85rem; text-align:center; cursor:pointer; transition:all .15s; }
+.pay:hover { border-color:var(--teal-soft); }
+.pay.on { border-color:var(--teal); background:var(--teal-light); }
+.pay i { display:inline-flex; color:var(--text-mid); font-style:normal; }
+.pay.on i { color:var(--teal-dark); }
+.pay b { font-family:var(--display); font-size:.78rem; color:var(--navy); font-weight:600; }
+
+/* RESUMEN */
+.summary { background:var(--navy); border-radius:var(--radius); padding:1.4rem 1.5rem; color:#fff; margin-top:1.4rem; position:relative; overflow:hidden; }
+.summary::after { content:''; position:absolute; right:-30px; top:-30px; width:120px; height:120px; background-image:radial-gradient(rgba(255,255,255,.08) 1.4px, transparent 1.4px); background-size:13px 13px; }
+.summary h4 { font-family:var(--display); font-size:.95rem; font-weight:700; letter-spacing:.04em; text-transform:uppercase; color:var(--teal); margin-bottom:.85rem; }
+.sum-row { display:flex; justify-content:space-between; gap:1rem; font-size:.84rem; padding:.34rem 0; color:rgba(255,255,255,.68); }
+.sum-row b { color:#fff; font-weight:600; text-align:right; }
+.sum-total { display:flex; justify-content:space-between; align-items:baseline; border-top:1px solid rgba(255,255,255,.14); margin-top:.7rem; padding-top:.8rem; font-size:.95rem; }
+.sum-total b { color:var(--teal); font-family:var(--display); font-size:1.45rem; font-weight:800; }
+
+/* POLÍTICAS */
+.policy { display:flex; gap:11px; font-size:.78rem; color:var(--text-mid); background:var(--surface-2); border:1px solid var(--line); border-left:3px solid var(--warning); border-radius:0 var(--radius-sm) var(--radius-sm) 0; padding:.85rem 1rem; margin-top:1rem; line-height:1.6; }
+.policy .icon { color:var(--warning); flex-shrink:0; margin-top:1px; }
+.policy b { color:var(--navy); }
+
+/* BADGE ESTADO DE PAGO */
+.pay-badge { font-family:var(--display); padding:3px 10px; border-radius:6px; font-size:.62rem; font-weight:700; text-transform:uppercase; letter-spacing:.05em; }
+.pb-pendiente { background:#fdf2e0; color:#9a6410; }
+.pb-parcial { background:#e7edf8; color:#1d4ed8; }
+.pb-liquidado { background:#e7f6ef; color:#0d6b48; }
+
+/* BRAZALETES (acreditaciones) */
+.brazalete { display:inline-flex; align-items:center; gap:7px; font-family:var(--display); font-size:.68rem; font-weight:700; padding:.3rem .7rem; border-radius:6px; letter-spacing:.04em; text-transform:uppercase; }
+.brazalete::before { content:''; width:9px; height:9px; border-radius:3px; }
+.bz-dorado  { background:var(--navy); color:#fff; }                 .bz-dorado::before  { background:var(--teal); }
+.bz-azul    { background:#e7edf8; color:#1d4ed8; }                  .bz-azul::before    { background:#1d4ed8; }
+.bz-verde   { background:var(--teal-light); color:var(--teal-dark);} .bz-verde::before   { background:var(--teal); }
+.bz-morado  { background:#ebe8fb; color:#5b3bc4; }                  .bz-morado::before  { background:#5b3bc4; }
+.bz-coral   { background:#fdf2e0; color:#9a6410; }                  .bz-coral::before   { background:var(--warning); }
+
+/* Acreditación entregada al inscribirse */
+.bz-band { display:flex; align-items:center; gap:13px; border-radius:var(--radius); padding:1.1rem 1.35rem; color:#fff; margin-top:1rem; box-shadow:var(--shadow); position:relative; overflow:hidden; }
+.bz-band::after { content:''; position:absolute; right:-25px; top:-25px; width:110px; height:110px; border-radius:50%; background:rgba(255,255,255,.1); }
+.bz-band .bz-ico { display:inline-flex; }
+.bz-band b { font-family:var(--display); font-size:1.05rem; font-weight:700; }
+.bz-band small { opacity:.88; font-size:.78rem; }
+.bzb-morado { background:linear-gradient(135deg,#5b3bc4,#7c5ae0); }
+.bzb-coral  { background:linear-gradient(135deg,var(--navy),var(--navy-light)); }
+
+/* PANEL "¿LISTO PARA INICIAR?" */
+.ready { border-radius:var(--radius); padding:1.1rem 1.3rem; margin:0 1.1rem 1rem; border:1px solid var(--line); background:var(--surface-2); }
+.ready-head { display:flex; align-items:center; justify-content:space-between; gap:1rem; }
+.ready-title { font-family:var(--display); font-size:.92rem; font-weight:700; color:var(--navy); }
+.ready-checks { list-style:none; margin:.85rem 0 0; padding:0; display:grid; gap:.4rem; }
+.ready-checks li { font-size:.82rem; display:flex; align-items:center; gap:9px; color:var(--text-mid); }
+.ready-checks li.ok { color:var(--success); }
+.ready-checks li .ck { width:18px; height:18px; border-radius:6px; display:inline-flex; align-items:center; justify-content:center; color:#fff; background:var(--text-light); flex-shrink:0; }
+.ready-checks li.ok .ck { background:var(--success); }
+.ready-badge { font-family:var(--display); font-size:.66rem; font-weight:700; text-transform:uppercase; letter-spacing:.05em; padding:.32rem .8rem; border-radius:6px; display:inline-flex; align-items:center; gap:5px; }
+.rb-ok { background:#e7f6ef; color:#0d6b48; } .rb-no { background:#fdf2e0; color:#9a6410; }
+
+/* IMAGEN EN TARJETA */
+.card-img { width:100%; height:140px; object-fit:cover; display:block; background:var(--surface-2); }
+.card-img-ph { width:100%; height:140px; display:flex; align-items:center; justify-content:center; background:linear-gradient(135deg,var(--navy),var(--navy-light)); color:var(--teal); position:relative; overflow:hidden; }
+.card-img-ph::after { content:''; position:absolute; inset:0; background-image:repeating-linear-gradient(135deg, rgba(255,255,255,.04) 0 2px, transparent 2px 11px); }
+.card.has-img .card-header { position:absolute; top:.6rem; right:.6rem; left:.6rem; z-index:2; }
+.card.has-img .card-status { box-shadow:0 2px 8px rgba(0,0,0,.18); }
+
+/* MESES SIN INTERESES */
+.msi-box { margin-top:.6rem; }
+.msi-opts { display:flex; flex-wrap:wrap; gap:.45rem; }
+.msi-opt { border:1.5px solid var(--line); border-radius:var(--radius-sm); padding:.5rem .85rem; cursor:pointer; font-family:var(--display); font-size:.8rem; font-weight:600; text-align:center; transition:all .15s; min-width:66px; color:var(--text-mid); }
+.msi-opt:hover { border-color:var(--teal-soft); }
+.msi-opt.on { border-color:var(--teal); background:var(--teal-light); color:var(--teal-dark); }
+.msi-opt small { display:block; font-family:var(--body); font-size:.64rem; font-weight:500; color:var(--text-light); margin-top:2px; }
+.msi-opt.on small { color:var(--teal-dark); }
+
+/* NOTA INFORMATIVA */
+.info-note { display:flex; gap:10px; font-size:.8rem; color:var(--text-mid); background:#eef4ff; border:1px solid #d4e2fb; border-radius:var(--radius-sm); padding:.8rem .95rem; margin:.5rem 0 1rem; line-height:1.55; }
+.info-note .icon { color:#1d4ed8; flex-shrink:0; margin-top:1px; }
+.info-note b { color:#1d4ed8; }
+
+/* TIPO DE ASISTENTE (segmented) */
+.seg { display:flex; gap:.6rem; }
+.seg-opt { flex:1; display:flex; flex-direction:column; align-items:center; border:1.5px solid var(--line); border-radius:var(--radius-sm); padding:.85rem; cursor:pointer; text-align:center; transition:all .15s; }
+.seg-opt:hover { border-color:var(--teal-soft); }
+.seg-opt.on { border-color:var(--teal); background:var(--teal-light); }
+.seg-opt small { font-size:.72rem; color:var(--text-light); }
+
+
+/* ══════════════════════════════════════════════════════════════
+   LANDING · ESTILO EVENTO (IBTM-like)  ·  Púrpura → Magenta → Carmesí
+   ══════════════════════════════════════════════════════════════ */
+.lp { min-height:100vh; background:var(--surface); overflow-x:hidden; }
+
+/* ---------- BARRA SUPERIOR (evento) ---------- */
+.ev-topbar {
+  position:relative; z-index:40;
+  display:flex; align-items:center; gap:1.5rem;
+  padding:.85rem 2.4rem;
+  background:linear-gradient(100deg, var(--purple-800) 0%, var(--purple-600) 48%, var(--magenta) 100%);
+  color:#fff;
+}
+.ev-brand { display:flex; align-items:center; gap:13px; text-decoration:none; color:#fff; }
+.ev-brand-mark { display:inline-flex; color:#fff; }
+.ev-brand-text { display:flex; flex-direction:column; line-height:1; }
+.ev-brand-text b { font-family:var(--display); font-size:1.1rem; font-weight:900; letter-spacing:.02em; text-transform:uppercase; }
+.ev-brand-text small { font-family:var(--display); font-size:.56rem; font-weight:700; letter-spacing:.28em; text-transform:uppercase; color:rgba(255,255,255,.7); margin-top:3px; }
+.ev-meta { display:flex; gap:1.6rem; padding-left:1.6rem; margin-left:.2rem; border-left:1px solid rgba(255,255,255,.22); }
+.ev-meta-item { display:flex; align-items:center; gap:8px; font-size:.82rem; font-weight:600; color:rgba(255,255,255,.92); }
+.ev-meta-item .icon { color:#fff; opacity:.85; }
+.ev-top-actions { display:flex; align-items:center; gap:.7rem; margin-left:auto; }
+.ev-lang { display:inline-flex; align-items:center; gap:6px; font-family:var(--display); font-size:.76rem; font-weight:700; color:#fff; background:rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.2); padding:.45rem .85rem; border-radius:999px; cursor:pointer; }
+.ev-heart { display:inline-flex; align-items:center; justify-content:center; width:38px; height:38px; border-radius:50%; background:var(--crimson); color:#fff; box-shadow:0 4px 14px rgba(236,29,82,.45); }
+.ev-top-cta { display:inline-flex; align-items:center; gap:7px; font-family:var(--display); font-size:.78rem; font-weight:800; letter-spacing:.04em; text-transform:uppercase; padding:.62rem 1.25rem; border-radius:999px; text-decoration:none; transition:transform .14s, box-shadow .14s, background .14s; }
+.ev-top-cta.solid { background:var(--crimson); color:#fff; box-shadow:0 6px 18px rgba(236,29,82,.4); }
+.ev-top-cta.solid:hover { transform:translateY(-1px); box-shadow:0 9px 24px rgba(236,29,82,.5); }
+.ev-top-cta.ghost { background:rgba(255,255,255,.1); color:#fff; border:1px solid rgba(255,255,255,.32); }
+.ev-top-cta.ghost:hover { background:rgba(255,255,255,.2); }
+
+/* ---------- NAV DE SECCIONES ---------- */
+.ev-nav { position:sticky; top:0; z-index:38; display:flex; justify-content:center; gap:.4rem; flex-wrap:wrap; padding:.5rem 1.5rem; background:rgba(255,255,255,.92); backdrop-filter:blur(12px); border-bottom:1px solid var(--line); }
+.ev-nav a { font-family:var(--display); font-size:.82rem; font-weight:600; color:var(--text-mid); text-decoration:none; padding:.5rem .95rem; border-radius:8px; transition:color .15s, background .15s; }
+.ev-nav a:hover { color:var(--crimson); background:var(--teal-light); }
+
+/* ---------- HERO ---------- */
+.ev-hero { position:relative; overflow:hidden; color:#fff; padding:5.5rem 2.4rem 6rem; background:var(--hero-grad); }
+.ev-hero-scene { position:absolute; inset:0; z-index:0; }
+.ev-hero-scene .riviera-scene { width:100%; height:100%; }
+.ev-hero-veil { position:absolute; inset:0; z-index:1; background:radial-gradient(120% 90% at 18% 30%, rgba(38,12,49,.55) 0%, transparent 55%), linear-gradient(180deg, rgba(38,12,49,.25) 0%, transparent 30%, rgba(236,29,82,.18) 100%); }
+.ev-hero-inner { position:relative; z-index:2; max-width:1180px; margin:0 auto; display:grid; grid-template-columns:1.15fr .85fr; gap:2rem; align-items:center; }
+.ev-hero-eyebrow { font-family:var(--display); font-size:.82rem; font-weight:800; letter-spacing:.26em; text-transform:uppercase; color:#fff; background:rgba(255,255,255,.14); border:1px solid rgba(255,255,255,.28); padding:.4rem 1rem; border-radius:999px; display:inline-block; }
+.ev-hero-title { font-family:var(--display); font-size:clamp(2.6rem,6vw,4.4rem); font-weight:900; line-height:.98; letter-spacing:-.02em; text-transform:uppercase; margin:1.3rem 0 1.1rem; text-shadow:0 4px 30px rgba(38,12,49,.4); }
+.ev-hero-title em { font-style:normal; color:#ffd6e2; }
+.ev-hero-sub { font-size:1.06rem; line-height:1.7; color:rgba(255,255,255,.9); max-width:540px; }
+.ev-hero-claim { display:block; margin-top:.9rem; font-weight:700; color:#fff; }
+.ev-hero-meta { display:flex; flex-wrap:wrap; gap:.6rem; margin:1.6rem 0 1.9rem; }
+.ev-hero-meta span { display:inline-flex; align-items:center; gap:8px; font-family:var(--display); font-size:.82rem; font-weight:700; color:#fff; background:rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.24); padding:.5rem 1rem; border-radius:999px; }
+.ev-hero-meta span .icon { color:#ffd0dd; }
+.ev-hero-actions { display:flex; flex-wrap:wrap; gap:.85rem; }
+.ev-btn { display:inline-flex; align-items:center; gap:9px; font-family:var(--display); font-size:.86rem; font-weight:800; letter-spacing:.04em; text-transform:uppercase; padding:.95rem 1.7rem; border-radius:12px; text-decoration:none; cursor:pointer; border:none; transition:transform .15s, box-shadow .15s, background .15s; }
+.ev-btn-dark { background:var(--ink); color:#fff; }
+.ev-btn-dark:hover { transform:translateY(-2px); box-shadow:0 12px 28px rgba(0,0,0,.35); }
+.ev-btn-crimson { background:var(--crimson); color:#fff; box-shadow:0 8px 22px rgba(236,29,82,.45); }
+.ev-btn-crimson:hover { transform:translateY(-2px); background:#ff2a60; box-shadow:0 12px 30px rgba(236,29,82,.55); }
+.ev-hero-orb { position:relative; justify-self:center; }
+
+/* ---------- 3 OPCIONES DE REGISTRO ---------- */
+.reg { max-width:1180px; margin:0 auto; padding:4.5rem 2.4rem 1rem; }
+.reg-head { text-align:center; max-width:680px; margin:0 auto 2.6rem; }
+.reg-head .eyebrow { color:var(--crimson); }
+.reg-title { font-family:var(--display); font-size:clamp(1.9rem,3.6vw,2.7rem); font-weight:900; color:var(--purple-800); letter-spacing:-.02em; margin:.55rem 0 .8rem; }
+.reg-sub { font-size:1rem; line-height:1.65; color:var(--text-mid); }
+.reg-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.4rem; }
+.reg-card { position:relative; display:flex; flex-direction:column; background:var(--surface); border:1px solid var(--line); border-radius:20px; padding:2rem 1.7rem 1.8rem; box-shadow:var(--shadow-sm); overflow:hidden; transition:transform .22s, box-shadow .22s, border-color .22s; }
+.reg-card::before { content:''; position:absolute; top:0; left:0; right:0; height:5px; background:var(--accentbar, var(--crimson)); }
+.reg-card:hover { transform:translateY(-6px); box-shadow:var(--shadow-lg); border-color:transparent; }
+.reg-card-ic { display:inline-flex; align-items:center; justify-content:center; width:60px; height:60px; border-radius:16px; color:#fff; margin-bottom:1.1rem; box-shadow:0 8px 20px rgba(44,14,56,.18); }
+.reg-card h3 { font-family:var(--display); font-size:1.4rem; font-weight:900; color:var(--purple-800); letter-spacing:-.01em; }
+.reg-card .reg-tagline { font-size:.84rem; font-weight:700; color:var(--crimson); margin:.25rem 0 .85rem; }
+.reg-card .reg-desc { font-size:.9rem; line-height:1.6; color:var(--text-mid); }
+.reg-perks { list-style:none; margin:1.1rem 0 1.4rem; padding:0; display:grid; gap:.55rem; }
+.reg-perks li { display:flex; align-items:flex-start; gap:9px; font-size:.86rem; color:var(--text); }
+.reg-perks li .icon { color:var(--success); flex-shrink:0; margin-top:1px; }
+.reg-card .ev-btn { width:100%; justify-content:center; margin-top:auto; }
+/* acentos por tipo */
+.reg-card.is-turista { --accentbar:var(--crimson); }
+.reg-card.is-turista .reg-card-ic { background:linear-gradient(135deg, var(--pink), var(--crimson)); }
+.reg-card.is-proveedor { --accentbar:var(--purple-600); }
+.reg-card.is-proveedor .reg-card-ic { background:linear-gradient(135deg, var(--purple-600), var(--magenta)); }
+.reg-card.is-proveedor .reg-tagline { color:var(--purple-600); }
+.reg-card.is-proveedor .ev-btn { background:var(--purple-600); }
+.reg-card.is-proveedor .ev-btn:hover { background:var(--purple-700); }
+.reg-card.is-ponente { --accentbar:var(--blue); }
+.reg-card.is-ponente .reg-card-ic { background:linear-gradient(135deg, var(--blue), var(--blue-600)); }
+.reg-card.is-ponente .reg-tagline { color:var(--blue-600); }
+.reg-card.is-ponente .ev-btn { background:var(--blue-600); }
+.reg-card.is-ponente .ev-btn:hover { background:#0e58ac; }
+
+/* ---------- OFERTA / FEATURES ---------- */
+.offer { max-width:1180px; margin:0 auto; padding:4.5rem 2.4rem; }
+.offer-head { text-align:center; max-width:640px; margin:0 auto 2.6rem; }
+.offer-head .eyebrow { color:var(--magenta); }
+.offer-head h2 { font-family:var(--display); font-size:clamp(1.7rem,3vw,2.3rem); font-weight:900; color:var(--purple-800); letter-spacing:-.02em; margin:.5rem 0 .7rem; }
+.offer-head p { font-size:.98rem; line-height:1.65; color:var(--text-mid); }
+.offer-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.2rem; }
+.offer-card { background:var(--surface); border:1px solid var(--line); border-radius:16px; padding:1.6rem 1.5rem; transition:transform .2s, box-shadow .2s, border-color .2s; }
+.offer-card:hover { transform:translateY(-4px); box-shadow:var(--shadow); border-color:var(--teal-soft); }
+.offer-ic { display:inline-flex; align-items:center; justify-content:center; width:48px; height:48px; border-radius:13px; background:var(--teal-light); color:var(--crimson); margin-bottom:1rem; }
+.offer-card h4 { font-family:var(--display); font-size:1.08rem; font-weight:800; color:var(--purple-800); margin-bottom:.3rem; }
+.offer-card .offer-promise { font-size:.8rem; font-weight:700; color:var(--magenta); margin-bottom:.5rem; }
+.offer-card p { font-size:.88rem; line-height:1.6; color:var(--text-mid); }
+
+/* ---------- LOGRAR (2 columnas) ---------- */
+.achieve { background:var(--purple-900); color:#fff; position:relative; overflow:hidden; }
+.achieve::after { content:''; position:absolute; right:-60px; top:-60px; width:320px; height:320px; border-radius:50%; background:radial-gradient(circle, rgba(236,29,82,.28), transparent 70%); }
+.achieve-inner { max-width:1180px; margin:0 auto; padding:5rem 2.4rem; position:relative; z-index:1; }
+.achieve-head { max-width:620px; margin-bottom:2.4rem; }
+.achieve-head .eyebrow { color:#ff9bb6; }
+.achieve-head h2 { font-family:var(--display); font-size:clamp(1.7rem,3vw,2.4rem); font-weight:900; letter-spacing:-.02em; margin:.5rem 0 0; }
+.achieve-grid { display:grid; grid-template-columns:1fr 1fr; gap:1.3rem; }
+.achieve-item { background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.12); border-left:4px solid var(--crimson); border-radius:0 14px 14px 0; padding:1.5rem 1.6rem; }
+.achieve-item:nth-child(2){ border-left-color:var(--blue); }
+.achieve-item:nth-child(3){ border-left-color:var(--magenta); }
+.achieve-item:nth-child(4){ border-left-color:var(--orange); }
+.achieve-item h4 { font-family:var(--display); font-size:1.12rem; font-weight:800; color:#fff; margin-bottom:.5rem; }
+.achieve-item p { font-size:.9rem; line-height:1.65; color:rgba(255,255,255,.72); }
+
+/* ---------- BANDA CTA ---------- */
+.cta-band { position:relative; overflow:hidden; background:linear-gradient(120deg, var(--purple-700), var(--magenta) 55%, var(--crimson)); color:#fff; text-align:center; padding:4.5rem 2rem; }
+.cta-band::before { content:''; position:absolute; inset:0; background-image:radial-gradient(rgba(255,255,255,.08) 1.4px, transparent 1.4px); background-size:22px 22px; opacity:.5; }
+.cta-band-inner { position:relative; z-index:1; max-width:760px; margin:0 auto; }
+.cta-band h2 { font-family:var(--display); font-size:clamp(1.8rem,3.6vw,2.7rem); font-weight:900; line-height:1.1; letter-spacing:-.02em; }
+.cta-band p { font-size:1.05rem; color:rgba(255,255,255,.88); margin:.9rem auto 1.8rem; max-width:560px; line-height:1.6; }
+.cta-band-actions { display:flex; flex-wrap:wrap; justify-content:center; gap:.85rem; }
+.cta-band .ev-btn-light { background:#fff; color:var(--crimson); }
+.cta-band .ev-btn-light:hover { transform:translateY(-2px); box-shadow:0 12px 30px rgba(0,0,0,.25); }
+.cta-band .ev-btn-outline { background:transparent; border:1.6px solid rgba(255,255,255,.6); color:#fff; }
+.cta-band .ev-btn-outline:hover { background:rgba(255,255,255,.14); border-color:#fff; }
+
+/* ---------- PATROCINADORES ---------- */
+.sponsors { max-width:1180px; margin:0 auto; padding:4rem 2.4rem; text-align:center; }
+.sponsors h3 { font-family:var(--display); font-size:.78rem; font-weight:800; letter-spacing:.22em; text-transform:uppercase; color:var(--text-light); margin-bottom:1.6rem; }
+.sponsors-row { display:flex; flex-wrap:wrap; justify-content:center; gap:1rem; }
+.sponsor-chip { display:inline-flex; align-items:center; gap:10px; padding:1rem 1.6rem; border:1px solid var(--line); border-radius:14px; background:var(--surface-2); font-family:var(--display); font-weight:800; color:var(--purple-700); font-size:.95rem; }
+.sponsor-chip .icon { color:var(--magenta); }
+
+/* ---------- FOOTER ---------- */
+.ev-footer { background:var(--purple-900); color:#fff; }
+.ev-footer-inner { max-width:1180px; margin:0 auto; padding:3.2rem 2.4rem 2rem; display:grid; grid-template-columns:1.4fr 1fr 1fr; gap:2.5rem; }
+.ev-footer-brand .ev-brand-text b { color:#fff; }
+.ev-footer-brand p { font-size:.88rem; line-height:1.65; color:rgba(255,255,255,.6); margin-top:1rem; max-width:320px; }
+.ev-footer-col h5 { font-family:var(--display); font-size:.72rem; font-weight:800; letter-spacing:.16em; text-transform:uppercase; color:var(--crimson); margin-bottom:1rem; }
+.ev-footer-col a, .ev-footer-col span { display:block; font-size:.88rem; color:rgba(255,255,255,.7); text-decoration:none; margin-bottom:.6rem; transition:color .15s; }
+.ev-footer-col a:hover { color:#fff; }
+.ev-footer-bottom { border-top:1px solid rgba(255,255,255,.1); }
+.ev-footer-bottom-inner { max-width:1180px; margin:0 auto; padding:1.3rem 2.4rem; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:.8rem; }
+.ev-footer-bottom small { font-size:.78rem; color:rgba(255,255,255,.5); }
+.ev-footer-bottom .links { display:flex; gap:1.2rem; }
+.ev-footer-bottom .links a { font-family:var(--display); font-size:.78rem; font-weight:600; color:rgba(255,255,255,.6); text-decoration:none; }
+.ev-footer-bottom .links a:hover { color:#fff; }
+
+/* ---------- ENTRADA / ANIMACIÓN ---------- */
+.fade-up { opacity:0; transform:translateY(18px); animation:fadeUp .7s cubic-bezier(.22,1,.36,1) forwards; }
+@keyframes fadeUp { to { opacity:1; transform:none; } }
+
+/* ---------- RESPONSIVE ---------- */
+@media(max-width:1000px){
+  .ev-hero-inner { grid-template-columns:1fr; text-align:center; }
+  .ev-hero-orb { display:none; }
+  .ev-hero-meta, .ev-hero-actions { justify-content:center; }
+  .ev-hero-sub { margin-left:auto; margin-right:auto; }
+  .reg-grid, .offer-grid { grid-template-columns:1fr 1fr; }
+  .achieve-grid { grid-template-columns:1fr; }
+  .ev-footer-inner { grid-template-columns:1fr 1fr; }
+}
+@media(max-width:760px){
+  .ev-topbar { flex-wrap:wrap; gap:.8rem; padding:.8rem 1.2rem; }
+  .ev-meta { display:none; }
+  .ev-top-actions { margin-left:auto; }
+  .ev-top-cta.ghost { display:none; }
+  .ev-hero { padding:3.5rem 1.2rem 4rem; }
+  .reg, .offer, .achieve-inner, .sponsors { padding-left:1.2rem; padding-right:1.2rem; }
+  .reg-grid, .offer-grid, .ev-footer-inner { grid-template-columns:1fr; }
+  .ev-nav { gap:.1rem; padding:.4rem .5rem; }
+  .ev-nav a { padding:.45rem .6rem; font-size:.76rem; }
+  .ev-footer-bottom-inner { flex-direction:column; text-align:center; }
+}
+</style></head><body>
+<div class="lp">
+<header class="ev-topbar">
+ <a href="#" class="ev-brand"><span class="ev-brand-mark"><svg width="32" height="32" viewBox="0 0 32 32" fill="none"><rect x="1.5" y="1.5" width="29" height="29" rx="7" stroke="currentColor" stroke-width="1.6" opacity="0.35"/><path d="M9 22 16 8l7 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 22h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="16" cy="8" r="1.8" fill="currentColor"/></svg></span><span class="ev-brand-text"><b>Riviera Maya</b><small>Congresos</small></span></a>
+ <div class="ev-meta"><span class="ev-meta-item"><svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4.5" width="18" height="16" rx="2.5"/><path d="M3 9h18M8 2.5v4M16 2.5v4"/></svg> 19–20 Agosto, 2026</span><span class="ev-meta-item"><svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-5.6 7-11a7 7 0 0 0-14 0c0 5.4 7 11 7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg> Centro de Convenciones · Cancún</span></div>
+ <div class="ev-top-actions"><span class="ev-lang">Español <svg class="icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="transform:rotate(90deg)"><path d="M9 6l6 6-6 6"/></svg></span><a href="#" class="ev-top-cta solid">Registro</a><a href="#" class="ev-top-cta ghost">Iniciar sesión</a></div>
+</header>
+<nav class="ev-nav"><a href="#registro">Registro</a><a href="#oferta">Exhibe</a><a href="#oferta">Visita</a><a href="#registro">Directorio</a><a href="#lograr">Conferencias</a><a href="#contacto">Contacto</a></nav>
+<section class="ev-hero"><div class="ev-hero-scene"><svg class="riviera-scene" viewBox="0 0 400 600" preserveAspectRatio="xMidYMid slice">
+<defs>
+<linearGradient id="ev-glow" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#fff" stop-opacity="0.16"/><stop offset="100%" stop-color="#fff" stop-opacity="0"/></linearGradient>
+<pattern id="ev-dots" width="24" height="24" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.4" fill="#fff" opacity="0.12"/></pattern>
+<linearGradient id="ev-pyr" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#fff" stop-opacity="0.10"/><stop offset="100%" stop-color="#160a1c" stop-opacity="0.28"/></linearGradient>
+</defs>
+<rect width="400" height="340" fill="url(#ev-glow)"/>
+<rect x="232" y="30" width="168" height="200" fill="url(#ev-dots)"/>
+<rect x="0" y="380" width="150" height="220" fill="url(#ev-dots)" opacity="0.7"/>
+<g stroke="#fff" stroke-width="1.4" opacity="0.32"><line x1="-10" y1="150" x2="90" y2="50"/><line x1="-10" y1="185" x2="125" y2="50"/><line x1="-10" y1="220" x2="160" y2="50"/></g>
+<g opacity="0.92"><path d="M70 600 L150 320 L250 320 L330 600 Z" fill="url(#ev-pyr)"/>
+<path d="M188 600 L188 360 L212 360 L212 600 Z" fill="#160a1c" opacity="0.30"/>
+<rect x="172" y="300" width="56" height="26" rx="2" fill="#160a1c" opacity="0.34"/>
+<g stroke="#fff" stroke-width="1.2" opacity="0.18"><line x1="120" y1="430" x2="280" y2="430"/><line x1="135" y1="375" x2="265" y2="375"/><line x1="150" y1="320" x2="250" y2="320"/></g></g>
+</svg></div><div class="ev-hero-veil"></div>
+ <div class="ev-hero-inner"><div class="fade-up">
+  <span class="ev-hero-eyebrow">¡Abrimos registro!</span>
+  <h1 class="ev-hero-title">Donde las culturas<br><em>hacen negocios</em></h1>
+  <p class="ev-hero-sub">Descubre tendencias, genera networking y conecta con event planners, compradores, destinos y proveedores de toda América.<span class="ev-hero-claim">Tres formas de ser parte: asiste, exhibe o sé ponente.</span></p>
+  <div class="ev-hero-meta"><span><svg class="icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4.5" width="18" height="16" rx="2.5"/><path d="M3 9h18M8 2.5v4M16 2.5v4"/></svg> 19 y 20 Agosto · 10:00–19:00</span><span><svg class="icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-5.6 7-11a7 7 0 0 0-14 0c0 5.4 7 11 7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg> Centro de Convenciones, Cancún</span></div>
+  <div class="ev-hero-actions"><a href="#registro" class="ev-btn ev-btn-dark">Ver opciones de registro <svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a href="#" class="ev-btn ev-btn-crimson">Ya tengo cuenta</a></div>
+ </div><div class="ev-hero-orb fade-up"><svg width="380" height="380" viewBox="0 0 400 400" fill="none" class="hero-orb">
+<defs>
+<radialGradient id="orb-core" cx="50%" cy="42%" r="62%"><stop offset="0%" stop-color="#3a1140"/><stop offset="70%" stop-color="#1c0a26"/><stop offset="100%" stop-color="#0e0514"/></radialGradient>
+<linearGradient id="orb-red" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#ff3b6e"/><stop offset="100%" stop-color="#c4123e"/></linearGradient>
+<linearGradient id="orb-blue" x1="0" y1="1" x2="1" y2="0"><stop offset="0%" stop-color="#0e8bd1"/><stop offset="100%" stop-color="#1763c0"/></linearGradient>
+<clipPath id="orb-clip"><circle cx="200" cy="200" r="165"/></clipPath>
+</defs>
+<circle cx="200" cy="200" r="165" fill="url(#orb-core)"/>
+<g clip-path="url(#orb-clip)" class="orb-spin">
+<path d="M200 35 C90 60 40 170 70 270 C95 350 200 372 200 372" stroke="url(#orb-red)" stroke-width="26" fill="none" stroke-linecap="round" opacity="0.95"/>
+<path d="M200 372 C320 350 372 240 338 140 C312 62 200 35 200 35" stroke="url(#orb-blue)" stroke-width="26" fill="none" stroke-linecap="round" opacity="0.95"/>
+<path d="M150 70 C70 120 60 240 130 320" stroke="url(#orb-red)" stroke-width="12" fill="none" stroke-linecap="round" opacity="0.6"/>
+<path d="M270 330 C345 280 350 160 280 80" stroke="url(#orb-blue)" stroke-width="12" fill="none" stroke-linecap="round" opacity="0.6"/>
+</g>
+<circle cx="200" cy="200" r="165" fill="none" stroke="#fff" stroke-opacity="0.12" stroke-width="1.5"/>
+</svg></div></div>
+</section>
+<section class="reg" id="registro"><div class="reg-head"><span class="eyebrow">Forma parte</span><h2 class="reg-title">Elige cómo quieres participar</h2><p class="reg-sub">Tres vías de acceso al evento donde las culturas se reúnen para hacer negocios. Selecciona tu perfil y completa tu registro en minutos.</p></div><div class="reg-grid"><article class="reg-card is-turista"><span class="reg-card-ic"><svg class="icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5A1.5 1.5 0 0 1 4.5 7h15A1.5 1.5 0 0 1 21 8.5v2a2 2 0 0 0 0 4v2A1.5 1.5 0 0 1 19.5 18h-15A1.5 1.5 0 0 1 3 16.5v-2a2 2 0 0 0 0-4Z"/><path d="M14.5 7v11" stroke-dasharray="2 2.5"/></svg></span>
+<h3>Turista / Cliente</h3><p class="reg-tagline">Asiste y vive el evento</p><p class="reg-desc">Acredítate como asistente para recorrer la expo, asistir a conferencias y conectar con destinos y proveedores de toda América.</p>
+<ul class="reg-perks"><li><svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5 10 17 19 7"/></svg> Acceso a conferencias y networking</li><li><svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5 10 17 19 7"/></svg> Acreditación y brazalete digital</li><li><svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5 10 17 19 7"/></svg> Meses sin intereses disponibles</li></ul>
+<a href="#" class="ev-btn ev-btn-crimson">Regístrate como asistente <svg class="icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></article><article class="reg-card is-proveedor"><span class="reg-card-ic"><svg class="icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9.5 5 4.5h14l1 5"/><path d="M4 9.5h16v9a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 4 18.5Z"/><path d="M4 9.5a2.5 2.5 0 0 0 5 0 2.5 2.5 0 0 0 5 0 2.5 2.5 0 0 0 5 0M9.5 20.5v-4h5v4"/></svg></span>
+<h3>Proveedores</h3><p class="reg-tagline">Exhibe tus servicios</p><p class="reg-desc">Postula tu empresa por categoría —hospedaje, gastronomía, audiovisual, traslados— y consigue un stand para mostrar tu oferta.</p>
+<ul class="reg-perks"><li><svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5 10 17 19 7"/></svg> Stand en el directorio de expositores</li><li><svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5 10 17 19 7"/></svg> Postulación por categoría de servicio</li><li><svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5 10 17 19 7"/></svg> Contacto directo con compradores</li></ul>
+<a href="#" class="ev-btn ev-btn-crimson">Registra mi empresa <svg class="icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></article><article class="reg-card is-ponente"><span class="reg-card-ic"><svg class="icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2.5" width="6" height="11" rx="3"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21M8.5 21h7"/></svg></span>
+<h3>Ponentes</h3><p class="reg-tagline">Comparte tu conocimiento</p><p class="reg-desc">Envía tu propuesta de ponencia, asigna a tus autores y forma parte del programa académico y de conferencias del evento.</p>
+<ul class="reg-perks"><li><svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5 10 17 19 7"/></svg> Envío y seguimiento de ponencias</li><li><svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5 10 17 19 7"/></svg> Asignación de coautores</li><li><svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5 10 17 19 7"/></svg> Espacio en el programa de conferencias</li></ul>
+<a href="#" class="ev-btn ev-btn-crimson">Postular una ponencia <svg class="icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></article></div></section>
+<section class="offer" id="oferta"><div class="offer-head"><span class="eyebrow">La plataforma</span><h2>Descubre una oferta internacional</h2><p>Seis módulos centrales que dan forma a la operación completa del evento, del primer registro al comprobante fiscal.</p></div><div class="offer-grid"><article class="offer-card"><span class="offer-ic"><svg class="icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7.5" width="18" height="12" rx="2"/><path d="M8.5 7.5V6A1.5 1.5 0 0 1 10 4.5h4A1.5 1.5 0 0 1 15.5 6v1.5M3 12.5h18"/></svg></span><h4>Gestión de congresos</h4><p class="offer-promise">Planeación de punta a punta</p><p>Crea y configura congresos, ferias y seminarios con control total de aforo, sede y fechas.</p></article><article class="offer-card"><span class="offer-ic"><svg class="icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2.5" width="6" height="11" rx="3"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21M8.5 21h7"/></svg></span><h4>Ponencias y autores</h4><p class="offer-promise">Contenido curado</p><p>Recibe propuestas, asigna autores y aprueba o devuelve ponencias con retroalimentación clara.</p></article><article class="offer-card"><span class="offer-ic"><svg class="icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9.5 5 4.5h14l1 5"/><path d="M4 9.5h16v9a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 4 18.5Z"/><path d="M4 9.5a2.5 2.5 0 0 0 5 0 2.5 2.5 0 0 0 5 0 2.5 2.5 0 0 0 5 0M9.5 20.5v-4h5v4"/></svg></span><h4>Proveedores y stands</h4><p class="offer-promise">Ecosistema de aliados</p><p>Invita o recibe postulaciones por categoría: hospedaje, gastronomía, audiovisual y traslados.</p></article><article class="offer-card"><span class="offer-ic"><svg class="icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5A1.5 1.5 0 0 1 4.5 7h15A1.5 1.5 0 0 1 21 8.5v2a2 2 0 0 0 0 4v2A1.5 1.5 0 0 1 19.5 18h-15A1.5 1.5 0 0 1 3 16.5v-2a2 2 0 0 0 0-4Z"/><path d="M14.5 7v11" stroke-dasharray="2 2.5"/></svg></span><h4>Inscripciones</h4><p class="offer-promise">Acreditación sin fricción</p><p>Administra asistentes, folios, brazaletes y estados de pago en un solo lugar.</p></article><article class="offer-card"><span class="offer-ic"><svg class="icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="1.5"/><path d="M8 7h2M14 7h2M8 11h2M14 11h2M8 15h2M14 15h2M10 21v-3h4v3"/></svg></span><h4>Salones y aforo</h4><p class="offer-promise">Espacios bajo control</p><p>Reserva salones del catálogo con precios congelados y valida la capacidad real del recinto.</p></article><article class="offer-card"><span class="offer-ic"><svg class="icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2.5h8l4 4v15a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1Z"/><path d="M14 2.5v4h4M8.5 13h7M8.5 16.5h7"/></svg></span><h4>Facturación CFDI</h4><p class="offer-promise">Cumplimiento fiscal</p><p>Genera comprobantes en PDF con subtotal, IVA, multas y meses sin intereses.</p></article></div></section>
+<section class="achieve" id="lograr"><div class="achieve-inner"><div class="achieve-head"><span class="eyebrow">Lo que puedes lograr</span><h2>Conecta, exhibe y cierra negocios en un solo lugar</h2></div>
+<div class="achieve-grid">
+<div class="achieve-item"><h4>Descubre nuevas ideas</h4><p>Participa en sesiones educativas, paneles y conversaciones que marcan el rumbo de la industria de reuniones, incentivos y exposiciones.</p></div>
+<div class="achieve-item"><h4>Encuentra nuevos socios</h4><p>Reúnete con compradores y proveedores internacionales y descubre soluciones que pueden llevar tus eventos al siguiente nivel.</p></div>
+<div class="achieve-item"><h4>Conecta con la industria</h4><p>El evento está diseñado para facilitar el networking profesional: cada conversación es una nueva oportunidad de negocio.</p></div>
+<div class="achieve-item"><h4>Inspírate con experiencias</h4><p>Descubre cómo la innovación y el diseño están transformando la forma de generar experiencias memorables.</p></div>
+</div></div></section>
+<section class="cta-band"><div class="cta-band-inner"><h2>Mientras el mundo mira a México, haz que tu negocio también se note.</h2><p>Participa en el evento donde las culturas se encuentran para cerrar negocios.</p><div class="cta-band-actions"><a href="#registro" class="ev-btn ev-btn-light">Registrarme ahora</a><a href="#" class="ev-btn ev-btn-outline">Acceder a mi cuenta</a></div></div></section>
+<section class="sponsors"><h3>Aliados y patrocinadores</h3><div class="sponsors-row"><span class="sponsor-chip"><svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m15.5 8.5-2 5-5 2 2-5Z"/></svg> Destino Invitado</span><span class="sponsor-chip"><svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M16 20v-1.5a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4V20"/><circle cx="9" cy="7.5" r="3.5"/><path d="M22 20v-1.5a4 4 0 0 0-3-3.85M16 4.15a4 4 0 0 1 0 6.7"/></svg> The Speaker</span><span class="sponsor-chip"><svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 3 8l9 5 9-5-9-5Z"/><path d="m3 13 9 5 9-5M3 16.5l9 5 9-5"/></svg> MPI Capítulo MX</span><span class="sponsor-chip"><svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c3 1.5 5 4.5 5 8.5l-2.5 4h-5L7 11.5C7 7.5 9 4.5 12 3Z"/><circle cx="12" cy="9.5" r="1.6"/><path d="M9.5 17c-1.5.5-2.5 2-2.5 4 2 0 3.5-1 4-2.5M14.5 17c1.5.5 2.5 2 2.5 4-2 0-3.5-1-4-2.5"/></svg> RX Trends</span></div></section>
+<footer class="ev-footer" id="contacto"><div class="ev-footer-inner">
+ <div class="ev-footer-brand"><a href="#" class="ev-brand"><span class="ev-brand-mark"><svg width="28" height="28" viewBox="0 0 32 32" fill="none"><rect x="1.5" y="1.5" width="29" height="29" rx="7" stroke="currentColor" stroke-width="1.6" opacity="0.35"/><path d="M9 22 16 8l7 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 22h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="16" cy="8" r="1.8" fill="currentColor"/></svg></span><span class="ev-brand-text"><b>Riviera Maya</b><small>Congresos</small></span></a><p>El punto de encuentro para los protagonistas de la industria de reuniones, incentivos, conferencias y exposiciones del Caribe mexicano.</p></div>
+ <div class="ev-footer-col"><h5>Información del evento</h5><span><svg class="icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4.5" width="18" height="16" rx="2.5"/><path d="M3 9h18M8 2.5v4M16 2.5v4"/></svg> 19–20 Agosto, 2026</span><span><svg class="icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg> 10:00 – 19:00 h</span><span><svg class="icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-5.6 7-11a7 7 0 0 0-14 0c0 5.4 7 11 7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg> Centro de Convenciones, Cancún</span><a href="#"><svg class="icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="5" width="19" height="14" rx="2.5"/><path d="m3.5 7 8.5 6 8.5-6"/></svg> contacto@rivieracongresos.mx</a></div>
+ <div class="ev-footer-col"><h5>Participa</h5><a href="#">Registro de asistentes</a><a href="#">Registro de proveedores</a><a href="#">Registro de ponentes</a><a href="#">Iniciar sesión</a></div>
+</div><div class="ev-footer-bottom"><div class="ev-footer-bottom-inner"><small>© 2026 Riviera Maya Congresos · Caribe Mexicano</small><div class="links"><a href="#">Aviso de privacidad</a><a href="#">Términos y condiciones</a></div></div></div></footer>
+</div></body></html>
