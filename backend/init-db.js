@@ -11,40 +11,19 @@ async function initDB() {
     database: process.env.DB_NAME || 'riviera_congresos',
     ssl: process.env.DB_SSL === 'true' ? { rejectUnauthorized: true } : undefined,
     waitForConnections: true,
-    connectionLimit: 10,
+    connectionLimit: 5,
   })
 
   try {
     const conn = await pool.getConnection()
-    
-    // Carga schema
-    const schema = fs.readFileSync(path.join(__dirname, '../database/schema.sql'), 'utf-8')
-    const schemaParts = schema.split(';').filter(s => s.trim())
-    
-    for (const query of schemaParts) {
-      if (query.trim()) {
-        try {
-          await conn.query(query)
-        } catch (err) {
-          // Ignora errores de "tabla ya existe"
-          if (!err.message.includes('already exists')) {
-            console.error('Error en query:', err.message)
-          }
-        }
-      }
-    }
-    
-    console.log('✅ Schema DB cargado')
+    console.log('✅ Conectado a BD')
     conn.release()
   } catch (err) {
-    console.error('❌ Error inicializando BD:', err.message)
+    console.warn('⚠️  No se pudo conectar a BD (aún no está lista):', err.message)
   }
 
   await pool.end()
 }
 
-if (require.main === module) {
-  initDB()
-}
-
-module.exports = initDB
+// Ejecuta en background, no bloquea
+initDB().catch(err => console.warn('Init DB warning:', err.message))
